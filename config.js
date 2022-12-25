@@ -32,7 +32,7 @@ const config =
 	{
 		listenIp   : '0.0.0.0',
 		// NOTE: Don't change listenPort (client app assumes 4443).
-		listenPort : process.env.ADMIN_LISTEN_PORT || 7000
+		listenPort : process.env.ADMIN_LISTEN_PORT || 7001
 	},
 	// mediasoup settings.
 	mediasoup :
