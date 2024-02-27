@@ -65,3 +65,6 @@ results
 
 # MacOS
 .DS_Store
+
+# SSL certificates
+certs/
