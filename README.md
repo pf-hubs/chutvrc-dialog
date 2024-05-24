@@ -35,7 +35,7 @@ It will be updated to migration information considering the current status of Mo
 
 ---
 
-Mediasoup based WebRTC SFU for Mozilla Hubs.
+Mediasoup based WebRTC SFU for Hubs.
 
 ## Development
 1. Clone repo
