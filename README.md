@@ -35,8 +35,6 @@ It will be updated to migration information considering the current status of Mo
 
 ---
 
-Mediasoup based WebRTC SFU for Mozilla Hubs.
-
 ## Development
 1. Clone repo
 2. In root project folder, `npm ci` (this may take a while).
