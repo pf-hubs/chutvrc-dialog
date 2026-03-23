@@ -9,9 +9,11 @@ copy package.json .
 copy package-lock.json .
 run npm ci
 copy . .
-from node:lts-slim
+from node:${NODE_VERSION}-slim
 workdir /app
 copy --from=build /app /app
-run apt-get update > /dev/null && apt-get install -y jq curl dnsutils netcat > /dev/null
+# run apt-get update > /dev/null && apt-get install -y jq curl dnsutils netcat > /dev/null
+run apt-get update > /dev/null && apt-get install -y jq curl dnsutils netcat-openbsd > /dev/null
 copy scripts/docker/run.sh /run.sh
+ENV DEBUG="*mediasoup* *INFO* *WARN* *ERROR*"
 cmd bash /run.sh
