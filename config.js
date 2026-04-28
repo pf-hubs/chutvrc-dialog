@@ -127,11 +127,8 @@ const config =
 			listenIps :
 			[
 				{
-					ip : process.env.MEDIASOUP_LISTEN_IP || '127.0.0.1'
-				},
-				{
-					ip          : '0.0.0.0',
-					announcedIp : process.env.MEDIASOUP_ANNOUNCED_IP
+					ip          : process.env.MEDIASOUP_LISTEN_IP || '0.0.0.0',
+					announcedIp : process.env.MEDIASOUP_ANNOUNCED_IP || undefined
 				}
 			],
 			initialAvailableOutgoingBitrate : 1000000,
@@ -143,14 +140,5 @@ const config =
 	},
 	authKey: process.env.AUTH_KEY || `${__dirname}/certs/perms.pub.pem`
 };
-
-if (process.env.MEDIASOUP_ANNOUNCED_IP) 
-{
-	// For now we have to bind to 0.0.0.0 to ensure TURN and non-TURN connectivity.
-	config.mediasoup.webRtcTransportOptions.listenIps.push({
-		ip          : '0.0.0.0',
-		announcedIp : process.env.MEDIASOUP_ANNOUNCED_IP
-	});
-}
 
 module.exports = config;

@@ -2,6 +2,10 @@
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
+> **Recommended: use [chutvrc-hubs-compose](https://github.com/pf-hubs/chutvrc-hubs-compose) to run chutvrc.**
+>
+> `chutvrc-hubs-compose` orchestrates this Dialog SFU together with Reticulum, the Hubs client, and Spoke through Docker Compose. It clones each service (including this repo) onto your machine, builds the images, generates local SSL certificates, and starts everything with one double-click on macOS / Windows. Setting these services up individually — as described later in this README — is significantly more involved.
+
 The WebRTC-side code for [chutvrc](https://github.com/pf-hubs/chutvrc-hubs), forked from [dialog](https://github.com/mozilla/dialog), to provide mediasoup based WebRTC SFU.
 
 ## chutvrc features
