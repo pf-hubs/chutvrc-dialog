@@ -9,7 +9,9 @@ healthcheck(){
 healthcheck &
 echo -e $(echo -e ${perms_key//\n/n}) > /app/certs/perms.pub.pem        
 head -3 /app/certs/perms.pub.pem
-export MEDIASOUP_ANNOUNCED_IP=$(curl ${PUB_IP_CURL})
+if [ -z "$MEDIASOUP_ANNOUNCED_IP" ]; then
+    export MEDIASOUP_ANNOUNCED_IP=$(curl -s --max-time 5 ${PUB_IP_CURL})
+fi
 echo "MEDIASOUP_ANNOUNCED_IP: $MEDIASOUP_ANNOUNCED_IP"
 export INTERACTIVE=nope
 
